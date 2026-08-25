@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Personal Website - CSS</title>
+  <!--  Fonts Link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;700&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Sticky and Static Environment Elements -->
+    <div class="cloud-container">
+        <img src="images/cloud.png" alt="Cloud Left" class="sticky-cloud cloud-left">
+        <img src="images/cloud.png" alt="Cloud Right" class="sticky-cloud cloud-right">
+    </div>
+
+    <div class="section sec-odd">
+        <header>
+            <table border="0" cellpadding="10" cellspacing="0" style="margin: 0 auto;">
+                <tr>
+                    <td valign="middle">
+                        <img src="images/profile.png.jpeg" alt="Profile Picture" class="profile-img" width="150" height="150">
+                    </td>
+                    <td valign="middle" style="text-align: left;">
+                        <h1>Valeria Arias</h1>
+                        <p><strong>Job Title:</strong> Computer Science Student</p>
+                        <p><strong>Address:</strong> 275 Paseo del Bosque, Colinas de Sanjavier</p>
+                        <p><em>Personal Presentation:</em> I would like to be known as an enthusiastic developer and life-long learner focused on crafting accessible and easy to use web applications.</p>
+                        <blockquote>
+                            <q>The only way to do great work is to love what you do.</q> &mdash; Steve Jobs
+                        </blockquote>
+                    </td>
+                </tr>
+            </table>
+        </header>
+    </div>
+
+    <hr>
+
+    <div class="section sec-even">
+        <nav>
+            <h2>Navigation</h2>
+            <ul>
+                <div style="display: flex; justify-content: center;">
+                <ul style="text-align: left; margin: 0; padding-left: 20px;">
+                <li><a href="destination.html">My Favorite Spots</a></li>
+                <li>Direct Links to Destinations:
+                    <ul>
+                        <li><a href="destination.html#dest1">Destination 1: Kyoto</a></li>
+                        <li><a href="destination.html#dest2">Destination 2: Paris</a></li>
+                        <li><a href="destination.html#dest3">Destination 3: Madrid</a></li>
+                        <li><a href="destination.html#dest4">Destination 4: Rome</a></li>
+                        <li><a href="destination.html#dest5">Destination 5: New York</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <hr>
+
+    <div class="section sec-odd">
+        <section>
+            <h2>Background</h2>
+            <p>I have spent the past years diving into the history and use of programming languages, starting from self-taught coding to studying computer science. My main goal in life is to secure a stable enough job so that I can solve real-world problems and help local communities through technology.</p>
+
+            <h3>Education</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <a href="https://losaltos.edu.mx/" target="_blank">
+                        <img src="images/los-altos-logo.png.png" alt="Colegio Los Altos" class="school-logo" width="30" height="30">
+                    </a>
+                    <em>2012 - 2018</em> &mdash; <strong>Centro Escolar Los Altos Elementary</strong>
+                </li>
+                <li>
+                    <a href="https://losaltos.edu.mx/" target="_blank">
+                        <img src="images/los-altos-logo.png.png" alt="Colegio Los Altos" class="school-logo" width="30" height="30">
+                    </a>
+                    <em>2018 - 2022</em> &mdash; <strong>Centro Escolar Los Altos Middle School</strong>
+                </li>
+                <li>
+                    <a href="https://losaltos.edu.mx/" target="_blank">
+                        <img src="images/los-altos-logo.png.png" alt="Colegio Los Altos" class="school-logo" width="30" height="30">
+                    </a>
+                    <em>2022 - 2025</em> &mdash; <strong>Los Altos High School</strong>
+                </li>
+                <li>
+                    <a href="https://www.up.edu.mx/campus-guadalajara/" target="_blank">
+                        <img src="images/up-logo.png.png" alt="Universidad Panamericana" class="school-logo" width="30" height="30">
+                    </a>
+                    <em>2025 - Present</em> &mdash; <strong>Universidad Panamericana</strong>
+                </li>
+            </ul>
+
+            <h3>Skills</h3>
+            <ol style="display: inline-block; text-align: left;">
+                <li>Python &mdash; 5%</li>
+                <li>Java &mdash; 85%</li>
+                <li>Swift &mdash; 90%</li>
+                <li>C++ &mdash; 80%</li>
+                <li>C &mdash; 60%</li>
+            </ol>
+        </section>
+    </div>
+
+    <hr>
+
+    <div class="section sec-even">
+        <section>
+            <h2>Hobbies</h2>
+            <ul style="display: inline-block; text-align: left;"> <!--Inline-block for better alignment -->
+                <li>Painting and drawing</li>
+                <li>Playing video games</li>
+                <li>Reading books</li>
+            </ul>
+
+            <h3>Favorite Food</h3>
+            <p><strong>Top 5 Cuisines:</strong></p>
+            <ol style="display: inline-block; text-align: left;">
+                <li>Mexican</li>
+                <li>Italian</li>
+                <li>Spanish</li>
+                <li>Japanese</li>
+                <li>French</li>
+            </ol>
+
+            <p><strong>Bottom 3 Cuisines:</strong></p>
+            <ol start="1" style="display: inline-block; text-align: left;">
+                <li>Greek</li>
+                <li>Lebanese</li>
+                <li>Arabic</li>
+            </ol>
+
+            <h3>Media Preferences</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <img src="images/book.png" alt="Books Icon" class="media-icon" width="40" height="40">
+                    <strong>Books</strong>
+                    <ul style="display: inline-block; text-align: left;">
+                        <li>And then there were none by Agatha Christie</li>
+                        <li>The Giver by Lois Lowry</li>
+                        <li>Circe by Madeline Miller</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <img src="images/movies.png.png" alt="Movies Icon" class="media-icon" width="40" height="40">
+                    <strong>Movies</strong>
+                    <ul style="display: inline-block; text-align: left;">
+                        <li>Fear Street 1978</li>
+                        <li>Anyone but you</li>
+                        <li>Fantastic 4</li>
+                    </ul>
+                </li>
+                <br>
+                <li>
+                    <img src="images/tv.png.png" alt="tv Icon" class="media-icon" width="40" height="40">
+                    <strong>TV Shows</strong>
+                    <ul style="display: inline-block; text-align: left;">
+                        <li>The Rookie</li>
+                        <li>Avatar: The Last Airbender</li>
+                        <li>And Then There Were None</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <hr>
+
+    <!--new meet the team style -->
+    <div class="section sec-odd">
+        <section>
+            <h2>Meet My Heroes</h2>
+            <p>Inspirational profiles of history-defining computational thinkers and authors.</p>
+            
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  <img src="images/t.png.png" alt="Alan Turing" class="team-img">
+                  <div class="container">
+                    <h3>Alan Turing</h3>
+                    <p class="title">Mathematician &amp; Scientist</p>
+                    <p class="lifespan">23 June 1912 &ndash; 7 June 1954</p>
+                    <p>Father of modern computer science, broke the Enigma code.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="card">
+                  <img src="images/l.png.png" alt="Ada Lovelace" class="team-img">
+                  <div class="container">
+                    <h3>Ada Lovelace</h3>
+                    <p class="title">Mathematician</p>
+                    <p class="lifespan">10 Dec 1815 &ndash; 27 Nov 1852</p>
+                    <p>Wrote the first algorithm intended to be processed by a machine.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="column">
+                <div class="card">
+                  <img src="images/a.png.png" alt="Agatha Christie" class="team-img">
+                  <div class="container">
+                    <h3>Agatha Christie</h3>
+                    <p class="title">Writer &amp; Novelist</p>
+                    <p class="lifespan">15 Sept 1890 &ndash; 12 Jan 1976</p>
+                    <p>Best-selling novelist of all time, known for 66 detective novels.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    </div>
+
+    <hr>
+
+    <div class="section sec-even">
+    <section>
+        <h2>Weekly Schedule</h2>
+        <table border="1" cellpadding="8" cellspacing="0" style="margin: 0 auto; background: white;">
+            <thead>
+                <tr>
+                    <th>Status</th>
+                    <th>Day</th>
+                    <th>Start</th>
+                    <th>End</th>
+                    <th>Description</th>
+                    <th>Place</th>
+                    <th>Type</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Lunes</td><td>07:00 AM</td><td>09:00 AM</td><td>Álgebra Lineal</td><td>D15</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Lunes</td><td>09:00 AM</td><td>11:00 AM</td><td>Cálculo Integral</td><td>G12</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Lunes</td><td>11:30 AM</td><td>01:00 PM</td><td>Ética</td><td>D21</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Lunes</td><td>01:00 PM</td><td>03:00 PM</td><td>Programación y Estructura de Datos</td><td>CIAC 2</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Martes</td><td>07:00 AM</td><td>09:00 AM</td><td>Proyectos de Inversión</td><td>D36</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Martes</td><td>09:00 AM</td><td>11:00 AM</td><td>Desarrollo de Aplicaciones Web</td><td>CIAC 2</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Martes</td><td>11:30 AM</td><td>01:00 PM</td><td>Química</td><td>G23</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Martes</td><td>05:00 PM</td><td>07:00 PM</td><td>Dirección de Proyectos</td><td>D24</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Miércoles</td><td>07:00 AM</td><td>09:00 AM</td><td>Álgebra Lineal</td><td>D15</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Miércoles</td><td>09:00 AM</td><td>11:00 AM</td><td>Cálculo Integral</td><td>G12</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Miércoles</td><td>11:30 AM</td><td>01:00 PM</td><td>Ética</td><td>D21</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Miércoles</td><td>01:00 PM</td><td>03:00 PM</td><td>Programación y Estructura de Datos</td><td>CIAC 2</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Jueves</td><td>07:00 AM</td><td>09:00 AM</td><td>Proyectos de Inversión</td><td>D36</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Jueves</td><td>09:00 AM</td><td>11:00 AM</td><td>Desarrollo de Aplicaciones Web</td><td>CIAC 2</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Jueves</td><td>11:30 AM</td><td>01:00 PM</td><td>Química</td><td>G23</td><td>Class</td><td>University</td></tr>
+                <tr><td align="center"><img src="images/free.png" alt="Free" width="20" valign="middle"> (Free)</td><td>Viernes</td><td>All Day</td><td>All Day</td><td>Free Day</td><td>N/A</td><td>Personal</td><td>Rest &amp; Self-study</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Sábado</td><td>09:00 AM</td><td>11:00 AM</td><td>Rehearsal</td><td>Rehearsal Room</td><td>Personal</td><td>Practice session</td></tr>
+                <tr><td align="center"><img src="images/busy.png" alt="Busy" width="20" valign="middle"> (Busy)</td><td>Domingo</td><td>08:00 AM</td><td>09:30 AM</td><td>Church</td><td>Local Church</td><td>Personal</td><td>Early service</td></tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+
+    <hr>
+
+    <div class="section sec-odd">
+        <section>
+            <h2>Schedule an Activity</h2>
+            <form action="#" method="POST" class="styled-form">
+                <div class="form-grid">
+                
+                    <div class="form-field">
+                        <label for="sched-date"><strong>Date:</strong></label><br>
+                        <input type="date" id="sched-date" name="date" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="sched-type"><strong>Type:</strong></label><br>
+                        <select id="sched-type" name="type" required>
+                            <option value="" disabled selected>Select type...</option>
+                            <option value="school">School</option>
+                            <option value="personal">Personal</option>
+                            <option value="professional">Professional</option>
+                            <option value="familiar">Familiar</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="sched-start"><strong>Time Start:</strong></label><br>
+                        <input type="time" id="sched-start" name="time_start" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="sched-end"><strong>Time End:</strong></label><br>
+                        <input type="time" id="sched-end" name="time_end" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="sched-activity"><strong>Activity:</strong></label><br>
+                        <input type="text" id="sched-activity" name="activity" placeholder="e.g., Coding Focus Time" required>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="sched-place"><strong>Place:</strong></label><br>
+                        <input type="text" id="sched-place" name="place" placeholder="e.g., CIAC 2 / Room D15" required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="sched-flag"><strong>Flag Color:</strong></label><br>
+                        <input type="color" id="sched-flag" name="flag" value="#ff0000" class="color-picker">
+                    </div>
+
+                    <div class="form-field" style="display: flex; align-items: center; justify-content: center; padding-top: 15px;">
+                        <label>
+                            <input type="checkbox" id="sched-status" name="is_busy" value="true">
+                            <strong>Mark as Busy</strong>
+                        </label>
+                    </div>
+                    
+                    <div class="form-field form-full-width">
+                        <label for="sched-notes"><strong>Notes:</strong></label><br>
+                        <textarea id="sched-notes" name="notes" rows="4" placeholder="Add details or prep work here..."></textarea>
+                    </div>
+                    
+                    <div class="form-field form-full-width">
+                        <br>
+                        <input type="submit" value="Register Activity" class="btn">
+                        <input type="reset" value="Clear Form" class="btn btn-reset">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <!-- Static Background Mountain Placement -->
+    <div class="mountain-container">
+        <img src="images/mountain.png" alt="Static Mountain" class="static-mountain">
+    </div>
+
+</body>
+</html>
