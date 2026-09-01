@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+
+
+.diagonal-container {
+    position: relative;
+}
+
+
+.diagonal-container > div {
+    width: 200px;
+    height: 200px;
+    position: absolute; 
+}
+
+
+.diagonal-container > div:nth-of-type(1) {
+    background-color: #ff595e;
+    border: 10px solid #333;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+
+.diagonal-container > div:nth-of-type(2) {
+    background-color: #ffca3a;
+    border: 20px solid #333;
+    
+    /* total size: 200px + 20px(border) + 40px(padding) = 260px */
+    top: 260px;
+    left: 260px;
+}
+
+
+.diagonal-container > div:nth-of-type(3) {
+    background-color: #8ac926;
+    border: 10px solid #333;
+    
+    /* Box 1 (260px) + Box 2 (200px + 40px border = 240px) = 500px */
+    top: 500px;
+    left: 500px;
+}
