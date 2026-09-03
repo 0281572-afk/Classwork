@@ -60,12 +60,15 @@ function component(width, height, color, x, y, type) {
     // Sets the new position of the object with x,y coordinates
     this.x += this.speedX;
     this.y += this.speedY;
+
     if (this.type == "image") {
       if (this.x >= canvasWidth - this.width / 2 || this.x <= 0) {
         //TODO: make the image bounce back when reaching the edges
+        this.speedX = -this.speedX;
       }
       if (this.y >= canvasHeight - this.height / 2 || this.y <= 0) {
         //TODO: make the image bounce back when reaching the edges
+        this.speedY = -this.speedY;
       }
     }
   };
@@ -85,10 +88,12 @@ function moveup() {
 
 function movedown() {
   //TODO: implement the move down functionality
+  myGamePiece.speedY += 1;
 }
 
 function moveleft() {
   //TODO: implement the move left functionality
+  myGamePiece.speedX -= 1;
 }
 
 function moveright() {
