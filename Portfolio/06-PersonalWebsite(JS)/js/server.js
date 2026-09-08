@@ -45,7 +45,7 @@ function createTableRow(data) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector(".styled-form");
+  const form = document.querySelector(".styled-form"); //the dot is used for class selectors, the hash is used for id selectors
   const tableBody = document.querySelector("#schedule-table tbody");
 
   if (!form || !tableBody) return; //Exit if form or table body doesnt exist
