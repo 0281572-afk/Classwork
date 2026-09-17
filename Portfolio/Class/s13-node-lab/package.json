@@ -1,0 +1,21 @@
+{
+  "name": "s13-node-lab",
+  "version": "1.0.0",
+  "description": "sample project creation steps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "creation"
+  ],
+  "author": "Valeria Arias",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.4.0",
+    "os": "^0.1.2"
+  }
+}
