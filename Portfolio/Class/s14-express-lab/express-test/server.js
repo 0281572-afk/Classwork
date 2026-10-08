@@ -1,6 +1,7 @@
 import express from "express";
 // const express = require('express'); old version
 // import axios from "axios";
+import weatherRoutes from "./routes/weatherRoutes.js";
 import { getWeatherfrom }from "./services/meteo-service.js";
 import { WeatherError, error } from "./services/weather-error.js";
 
@@ -16,6 +17,14 @@ const scientists = [
 ];
 
 const initiatives = [];
+
+const protect = (req, res, next) => {
+  const { token } = req.headers;
+  if(!token || token !== "my-secret-token") {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  next();
+}
 
 
 app.get("/", (req, res) => { //this callback func will alaways recieve two varaible: request and response
@@ -81,19 +90,25 @@ app.post("/api/initiatives", (req, res) => {
   res.json({ title, budget, department, status: "Ok" });
 });
 
+//same endpoint, listening to the same method. 
+//this method will access the info the previous get/about one gave
 
-app.get("/about", (req, res, next) => {
-  next({msg: "This is my WebApp class project."});
-});
+app.get("/about", 
+  (req, res, next) => {
+    req._internalMsg = "This is my WebApp class project.";
+    //instead of calling next(), if res.send(`Second endpoint...) is called here, the next method will not be executed.
+    next();
+  }, 
+  (req, res, next) => {
+    res.send(`Second endpoint. ${req._internalMsg}`); 
+  }
+); //chaining the endpoints, i do something in a mtheod and i keep pushing forward, and someone else (another method) down the road will continue the work. This is called middleware chaining. The next() function is used to pass control to the next middleware function in the stack.
 
 app.post("/about", (req, res) => {
   res.send('This is still my WebApp class project, but secure.');
 });
 
-app.get("/about", (req, res, next) => {
-  res.send("Second endpoint.");
-});
-
+/* this was all moved to routes
 app.get("/weatherGDL", async (req, res) => {
   const respString = await getWeatherfrom(20.6597, -103.349, "Guadalajara");
   res.send(respString);
@@ -102,7 +117,7 @@ app.get("/weatherGDL", async (req, res) => {
   const response = await axios(apiUrl);
   const currentWeather = response.data;
   console.log(currentWeather); 
-  res.send(`In Guadalajara, the current temps is ${currentWeather.current_weather.temperature} C`); */
+  res.send(`In Guadalajara, the current temps is ${currentWeather.current_weather.temperature} C`); 
 
 });
 
@@ -135,7 +150,7 @@ const cities = {
     res.status(500).send({ error: "Unknown error" });
   }
 
-}); */
+}); 
 
 //with next, we do not use try-catch 
 app.get("/weather/:city", async (req, res, next) => { //we need to think defensively when programming 
@@ -148,14 +163,16 @@ app.get("/weather/:city", async (req, res, next) => { //we need to think defensi
     const respString = await getWeatherfrom(lat, long, name);
     res.send(respString);
 });
-
-/*app.all("*", (req, res, next) => {
-  next(new Error("Endpoint not found"));
-});
 */
 
-app.use(errorMiddleware);
 
+app.use("/api/weather", protect, weatherRoutes); //this is the route that will handle all the weather endpoints
+
+app.all("/{*splat}", (req, res, next) => {
+  next(new Error("Endpoint not found"));
+});
+
+app.use(errorMiddleware);
 
         //which is the port that this server will be listening to 
 app.listen(3000, () => {
