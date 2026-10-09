@@ -43,6 +43,28 @@
         <button type="submit">Add Task</button>
     </form>
 
+    <% if (locals.tasks && tasks.length > 0) { %>
+        <ul>
+            <% tasks.forEach((taskItem, index) => { %>
+                <li>
+                    <%= taskItem %>
+                    
+                    <!-- DELETE LINK: Asegúrate de que apunte a /task/delete/INDICE -->
+                    <a href="/task/delete/<%= index %>" style="color: red;">[Delete]</a>
+                    
+                    <!-- Flechas de reordenamiento -->
+                    <% if (index > 0) { %>
+                        <a href="/task/move/up/<%= index %>">▲</a>
+                    <% } %>
+
+                    <% if (index < tasks.length - 1) { %>
+                        <a href="/task/move/down/<%= index %>">▼</a>
+                    <% } %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
 </body>
 
 </html>

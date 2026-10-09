@@ -1,6 +1,7 @@
-import express from "express";
-import bodyParser from "body-parser";
-import path from "path";
+import express from 'express';
+import bodyParser from 'body-parser';
+import ejs from 'ejs';
+import path from 'path';
 
 const app = express();
 const PORT = 3000;
@@ -8,14 +9,16 @@ const PORT = 3000;
 const names = [];
 const tasks = [];
 
-app.engine('html', (await import('ejs')).renderFile); //EJS as the template engine for html files
+app.engine('html', ejs.renderFile); //EJS as the template engine for html files
+app.set('views', path.join(process.cwd(), 'html')); // set the views directory to the 'html' folder
+app.set('view engine', 'html');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 //get 
 //allow the root path to return the index.html file provided.
 app.get('/', (req, res) => {
-    res.render('./html/index.html', { names, tasks, error: null });
+    res.render('index', { names, tasks, error: null });
 });
 
 app.get('/greet', (req, res) => {
@@ -25,7 +28,7 @@ app.get('/greet', (req, res) => {
         names.push(name.trim()); // stores name
     }
     //redirect 
-    res.render('./html/index.html', { names, tasks, error: null });
+    res.render('index', { names, tasks, error: null });
 });
 
 app.get('/greet/:index', (req, res, next) => {
@@ -37,7 +40,7 @@ app.get('/greet/:index', (req, res, next) => {
         return next(err); 
     }
 
-    res.render('./html/wazzup.html', { name: names[idx] });
+    res.render('index', { name: names[idx] });
 });
 
 //post
@@ -47,7 +50,7 @@ app.post('/task', (req, res) => {
     if (task && task.trim() !== "") {
         tasks.push(task.trim());
     }
-    res.render('./html/index.html', { names, tasks, error: null });
+    res.render('index', { names, tasks, error: null });
 });
 
 app.get('/task/move/:direction/:index', (req, res) => {
@@ -64,7 +67,7 @@ app.get('/task/move/:direction/:index', (req, res) => {
         tasks[idx + 1] = temp;
     }
 
-    res.render('./html/index.html', { names, tasks, error: null });
+    res.render('index', { names, tasks, error: null });
 });
 
 app.get('/task', (req, res) => {
@@ -78,7 +81,7 @@ app.get('/task/delete/:index', (req, res) => {
     if (!isNaN(idx) && idx >= 0 && idx < tasks.length) {
         tasks.splice(idx, 1);
     }
-    res.render('./html/index.html', { names, tasks, error: null });
+    res.render('index', { names, tasks, error: null });
 });
 
 //put
@@ -93,7 +96,7 @@ app.put('/greet/:name', (req, res) => {
 //error handling 
 app.use((err, req, res, next) => {
     console.error("Error capturado:", err.message);
-    res.status(400).render('./html/index.html', {
+    res.status(400).render('index', {
         names,
         tasks,
         error: err.message
