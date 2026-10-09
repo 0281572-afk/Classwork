@@ -10,15 +10,38 @@
 
 <body>
     <% if (locals.error) { %>
-        <h3>
+        <h3 style="color: red;">
             <%= error %>
         </h3>
-        <% } %>
-            <form action="/greet" method="get">
-                Register:
-                <input type="text" name="name" id="name" placeholder="Name">
-                <input type="submit" value="go next">
-            </form>
+    <% } %>
+    
+    <form action="/greet" method="get">
+        Register:
+        <input type="text" name="name" id="name" placeholder="Name">
+        <input type="submit" value="go next">
+    </form>
+
+    <!--include message under form to greet user-->
+    <% if (locals.names && names.length > 0) { %>
+        <h3>Greetings to all of you:</h3>
+        <ul>
+            <% names.forEach((personName, index) => { %>
+                <li>
+                    <a href="/greet/<%= index %>"><%= personName %></a>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <hr>
+
+    <!--post todo list-->
+    <h2>TODO List</h2>
+
+    <form action="/task" method="post">
+        <input type="text" name="task" placeholder="New Task" required>
+        <button type="submit">Add Task</button>
+    </form>
 
 </body>
 
